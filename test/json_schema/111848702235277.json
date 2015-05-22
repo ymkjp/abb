@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://graph.facebook.com/111848702235277",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "https://graph.facebook.com/111848702235277/id",
+      "type": "string"
+    },
+    "can_post": {
+      "id": "https://graph.facebook.com/111848702235277/can_post",
+      "type": "boolean"
+    },
+    "category": {
+      "id": "https://graph.facebook.com/111848702235277/category",
+      "type": "string"
+    },
+    "checkins": {
+      "id": "https://graph.facebook.com/111848702235277/checkins",
+      "type": "integer"
+    },
+    "cover": {
+      "id": "https://graph.facebook.com/111848702235277/cover",
+      "type": "object",
+      "properties": {
+        "cover_id": {
+          "id": "https://graph.facebook.com/111848702235277/cover/cover_id",
+          "type": "string"
+        },
+        "offset_x": {
+          "id": "https://graph.facebook.com/111848702235277/cover/offset_x",
+          "type": "integer"
+        },
+        "offset_y": {
+          "id": "https://graph.facebook.com/111848702235277/cover/offset_y",
+          "type": "integer"
+        },
+        "source": {
+          "id": "https://graph.facebook.com/111848702235277/cover/source",
+          "type": "string"
+        },
+        "id": {
+          "id": "https://graph.facebook.com/111848702235277/cover/id",
+          "type": "string"
+        }
+      }
+    },
+    "founded": {
+      "id": "https://graph.facebook.com/111848702235277/founded",
+      "type": "string"
+    },
+    "has_added_app": {
+      "id": "https://graph.facebook.com/111848702235277/has_added_app",
+      "type": "boolean"
+    },
+    "is_community_page": {
+      "id": "https://graph.facebook.com/111848702235277/is_community_page",
+      "type": "boolean"
+    },
+    "is_published": {
+      "id": "https://graph.facebook.com/111848702235277/is_published",
+      "type": "boolean"
+    },
+    "likes": {
+      "id": "https://graph.facebook.com/111848702235277/likes",
+      "type": "integer"
+    },
+    "link": {
+      "id": "https://graph.facebook.com/111848702235277/link",
+      "type": "string"
+    },
+    "name": {
+      "id": "https://graph.facebook.com/111848702235277/name",
+      "type": "string"
+    },
+    "parking": {
+      "id": "https://graph.facebook.com/111848702235277/parking",
+      "type": "object",
+      "properties": {
+        "lot": {
+          "id": "https://graph.facebook.com/111848702235277/parking/lot",
+          "type": "integer"
+        },
+        "street": {
+          "id": "https://graph.facebook.com/111848702235277/parking/street",
+          "type": "integer"
+        },
+        "valet": {
+          "id": "https://graph.facebook.com/111848702235277/parking/valet",
+          "type": "integer"
+        }
+      }
+    },
+    "phone": {
+      "id": "https://graph.facebook.com/111848702235277/phone",
+      "type": "string"
+    },
+    "talking_about_count": {
+      "id": "https://graph.facebook.com/111848702235277/talking_about_count",
+      "type": "integer"
+    },
+    "username": {
+      "id": "https://graph.facebook.com/111848702235277/username",
+      "type": "string"
+    },
+    "website": {
+      "id": "https://graph.facebook.com/111848702235277/website",
+      "type": "string"
+    },
+    "were_here_count": {
+      "id": "https://graph.facebook.com/111848702235277/were_here_count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "can_post",
+    "category",
+    "checkins",
+    "cover",
+    "founded",
+    "has_added_app",
+    "is_community_page",
+    "is_published",
+    "likes",
+    "link",
+    "name",
+    "parking",
+    "phone",
+    "talking_about_count",
+    "username",
+    "website",
+    "were_here_count"
+  ]
+}

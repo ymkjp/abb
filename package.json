@@ -1,0 +1,41 @@
+{
+  "name": "abb",
+  "version": "1.0.0",
+  "description": "Testing framework for API as Black Box",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm install --dev",
+    "test": "mocha --require intelli-espower-loader test/",
+    "test:watch": "npm run test -- --watch",
+    "test:xunit": "npm run test -- --reporter xunit",
+    "lint": "eslint lib/**.js test/**.js",
+    "doc": "docco examples/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.gree-dev.net:TestEngineer/abb.git"
+  },
+  "author": "Kenta YAMAMOTO <kenta.ky.yamamoto@gree.net>",
+  "license": "MIT",
+  "dependencies": {
+    "jsonschema": "^1.0.1",
+    "superagent": "^1.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "assertion-error": "^1.0.1",
+    "chai": "^2.3.0",
+    "docco": "*",
+    "eslint": "^0.22.1",
+    "eslint-plugin-mocha": "^0.2.2",
+    "espower-loader": "^0.11.0",
+    "intelli-espower-loader": "^0.7.0",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0",
+    "sinon": "^1.14.1",
+    "superagent-mock": "^1.2.0"
+  },
+  "directories": {
+    "test": "test/"
+  }
+}
