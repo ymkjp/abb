@@ -4,7 +4,7 @@ abb
 Testing Framework for API as Black Box
 
 # TODO
-* Doc生成、mochaとの連携を考える
+* Doc (mocha plugin)
 
 ## Description
 

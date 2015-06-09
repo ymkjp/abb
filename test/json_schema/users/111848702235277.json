@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://api.example.com",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "https://api.example.com/id",
+      "type": "string"
+    },
+    "username": {
+      "id": "https://api.example.com/username",
+      "type": "string"
+    },
+    "email": {
+      "id": "https://api.example.com/email",
+      "type": "string"
+    },
+    "created_at": {
+      "id": "https://api.example.com/created_at",
+      "type": "string"
+    },
+    "updated_at": {
+      "id": "https://api.example.com/updated_at",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "username",
+    "email",
+    "created_at",
+    "updated_at"
+  ]
+}

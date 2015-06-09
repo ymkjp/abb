@@ -18,22 +18,21 @@
   "author": "Kenta YAMAMOTO <kenta.ky.yamamoto@gree.net>",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^2.9.27",
     "jsonschema": "^1.0.1",
     "superagent": "^1.2.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "assertion-error": "^1.0.1",
-    "chai": "^2.3.0",
     "docco": "*",
     "eslint": "^0.22.1",
     "eslint-plugin-mocha": "^0.2.2",
     "espower-loader": "^0.11.0",
     "intelli-espower-loader": "^0.7.0",
     "mocha": "^2.2.5",
+    "nock": "^2.4.1",
     "power-assert": "^0.11.0",
-    "sinon": "^1.14.1",
-    "superagent-mock": "^1.2.0"
+    "sinon": "^1.14.1"
   },
   "directories": {
     "test": "test/"
