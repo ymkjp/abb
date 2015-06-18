@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.9.27",
+    "handlebars": "^3.0.3",
     "jsonschema": "^1.0.1",
     "superagent": "^1.2.0",
     "underscore": "^1.8.3"

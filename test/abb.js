@@ -63,18 +63,7 @@
     });
 
     it('creates instance', function() {
-      assert(client instanceof client.constructor);
-    });
-
-    it('generates document', function() {
-      var pageTitle = 'Page description',
-        pageDesc = 'Page description',
-        doc = client
-          .title(pageTitle)
-          .description(pageDesc)
-          .getDocument();
-      assert.equal(doc.title, pageTitle);
-      assert.equal(doc.description, pageDesc);
+      assert(client instanceof Abb);
     });
 
     it('gets agenda by key', function() {
@@ -94,8 +83,8 @@
       });
     });
 
-    it('gets outcome by key', function(done) {
-      var result = client
+    it('executes request and asserts response', function(done) {
+      var executed = client
         .defaultRequest({header: {'Accept': 'application/json'}})
         .defaultResponse({header: {'content-type': 'application/json'}})
         .request('create', {
@@ -116,11 +105,30 @@
           , body: '__$create.response.body__'
         })
         .done(done);
-
-      //assert(result.getOutcome(key));
+      assert(executed);
     });
 
-    it.skip('executes callback function', function() {});
+    it('sets document attributes', function() {
+      var pageTitle = 'Page Title',
+        pageDesc = 'Page description',
+        doc = client
+          .title(pageTitle)
+          .description(pageDesc)
+          .getDocument();
+      assert.equal(doc.title, pageTitle);
+      assert.equal(doc.description, pageDesc);
+    });
+
+    it('sets document attributes', function() {
+      var pageTitle = 'Page Title',
+        pageDesc = 'Page description',
+        doc = client
+          .title(pageTitle)
+          .description(pageDesc)
+          .getDocument();
+      assert.equal(doc.title, pageTitle);
+      assert.equal(doc.description, pageDesc);
+    });
 
   });
 }());
