@@ -109,9 +109,9 @@
     });
 
     it('sets document attributes', function() {
-      var pageTitle = 'Page Title',
-        pageDesc = 'Page description',
-        doc = client
+      var pageTitle = 'Page Title'
+        , pageDesc = 'Page description'
+        , doc = client
           .title(pageTitle)
           .description(pageDesc)
           .getDocument();
