@@ -11,7 +11,7 @@
   var assert = require('power-assert')
     , nock = require('nock')
     , sinon = require('sinon')
-    , _ = require('underscore');
+    , _ = require('lodash');
 
   var IS_COMMON_JS = !!(typeof module !== 'undefined' && module.exports)
     , NEW_USER = {

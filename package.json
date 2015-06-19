@@ -21,6 +21,7 @@
     "bluebird": "^2.9.27",
     "handlebars": "^3.0.3",
     "jsonschema": "^1.0.1",
+    "lodash": "^3.9.3",
     "superagent": "^1.2.0",
     "underscore": "^1.8.3"
   },
