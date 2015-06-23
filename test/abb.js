@@ -1,9 +1,7 @@
 /*eslint-env mocha */
 /**
- * @todo
- * uniq property
- * default request or response params
- * Resolve ref by callback function
+ * @todo Support unique property for unique constraints
+ * @todo Resolve ref by callback function
  */
 (function() {
   'use strict';

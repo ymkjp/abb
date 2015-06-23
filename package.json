@@ -1,6 +1,6 @@
 {
   "name": "abb",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Testing framework for API as Black Box",
   "main": "index.js",
   "scripts": {
