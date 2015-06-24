@@ -2,6 +2,8 @@
 /**
  * @todo Support unique property for unique constraints
  * @todo Resolve ref by callback function
+ * @todo Document HTTP/1.1
+ * @todo Document resolving $__ref__
  */
 (function() {
   'use strict';
@@ -85,6 +87,10 @@
       var executed = client
         .defaultRequest({header: {'Accept': 'application/json'}})
         .defaultResponse({header: {'content-type': 'application/json'}})
+        .resource({
+          name: 'User'
+          , desc: 'Page description'
+        })
         .request('create', {
           url: 'https://api.example.com/users'
           , method: 'post'
@@ -104,28 +110,6 @@
         })
         .done(done);
       assert(executed);
-    });
-
-    it('sets document attributes', function() {
-      var pageTitle = 'Page Title'
-        , pageDesc = 'Page description'
-        , doc = client
-          .title(pageTitle)
-          .description(pageDesc)
-          .getDocument();
-      assert.equal(doc.title, pageTitle);
-      assert.equal(doc.description, pageDesc);
-    });
-
-    it('sets document attributes', function() {
-      var pageTitle = 'Page Title',
-        pageDesc = 'Page description',
-        doc = client
-          .title(pageTitle)
-          .description(pageDesc)
-          .getDocument();
-      assert.equal(doc.title, pageTitle);
-      assert.equal(doc.description, pageDesc);
     });
 
   });

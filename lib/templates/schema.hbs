@@ -1,0 +1,41 @@
+## {{name}}
+{{desc}}
+
+{{#each context}}
+### {{../name}} {{operation}}
+
+```
+{{req.method}} {{req.url.path}}
+```
+
+{{#if req.data}}
+```{{req._dataFormat}}
+{{{req.data}}}
+```
+{{/if}}
+
+#### Curl Example
+```bash
+$ {{{req.curl}}}
+```
+
+#### Response Example
+```
+HTTP/1.1 {{res.status}}
+```
+
+```{{res._dataFormat}}
+{{{res.body}}}
+```
+{{/each}}
+
+{{!
+### Attributes
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **username** | *string* | user's name | `"smith"` |
+| **email** | *email* | user's email address | `"john.smith@example.com"` |
+| **created_at** | *date-time* | when user was created | `"2012-01-01T12:00:00Z"` |
+| **id** | *uuid* | unique identifier of user | `"01234567-89ab-cdef-0123-456789abcdef"` |
+| **updated_at** | *date-time* | when user was updated | `"2012-01-01T12:00:00Z"` |
+}}

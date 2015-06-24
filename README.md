@@ -3,9 +3,6 @@ abb
 
 Testing Framework for API as Black Box
 
-# TODO
-* Doc (mocha plugin)
-
 ## Description
 
 ## Demo
