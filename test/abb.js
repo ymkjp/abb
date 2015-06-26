@@ -35,7 +35,7 @@
     if (IS_COMMON_JS) {
       nock('https://api.example.com')
         .defaultReplyHeaders({'content-type': 'application/json'})
-        .get('/').reply(200)
+        .get('/').reply(200, 'Foo bar')
         .post('/users', NEW_USER).reply(201, USER)
         .get('/users/111848702235277').reply(200, USER)
         .get('/users').reply(200, USERS)
@@ -83,7 +83,7 @@
       });
     });
 
-    it('executes request and asserts response', function(done) {
+    it('executes', function(done) {
       var executed = client
         .defaultRequest({header: {'Accept': 'application/json'}})
         .defaultResponse({header: {'content-type': 'application/json'}})
@@ -91,6 +91,14 @@
           name: 'User'
           , desc: 'Page description'
         })
+        // @todo Assertion (RegExp, _.contains)
+        //.request({
+        //  url: 'https://api.example.com/'
+        //})
+        //.response({
+        //  status: 200
+        //  , body: 'Foo bar'
+        //})
         .request('create', {
           url: 'https://api.example.com/users'
           , method: 'post'
@@ -108,7 +116,7 @@
           status: 200
           , body: '__$create.response.body__'
         })
-        .done(done);
+        .exec(done);
       assert(executed);
     });
 
