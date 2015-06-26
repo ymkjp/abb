@@ -1,7 +1,28 @@
 ## User
-Page description
+Operates CRUD for User resource
 
-### User Create
+### ***OPERATION*** User
+
+```
+GET /
+```
+
+
+#### Curl Example
+```bash
+$ curl https://api.example.com/ \
+--header 'Accept: text/plain'
+```
+
+#### Response Example
+```
+HTTP/1.1 200 OK
+```
+
+```
+Foo Bar
+```
+### Create User
 
 ```
 POST /users
@@ -26,7 +47,7 @@ $ curl --request POST https://api.example.com/users \
 
 #### Response Example
 ```
-HTTP/1.1 201
+HTTP/1.1 201 Created
 ```
 
 ```json
@@ -38,7 +59,7 @@ HTTP/1.1 201
   "updated_at": "2012-01-01T12:00:00Z"
 }
 ```
-### User Read
+### Read User
 
 ```
 GET /users/__$create.response.body.id__
@@ -53,7 +74,7 @@ $ curl https://api.example.com/users/__$create.response.body.id__ \
 
 #### Response Example
 ```
-HTTP/1.1 200
+HTTP/1.1 200 OK
 ```
 
 ```json

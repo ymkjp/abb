@@ -20,6 +20,7 @@
   "dependencies": {
     "bluebird": "^2.9.27",
     "handlebars": "^3.0.3",
+    "http-status": "^0.2.0",
     "jsonschema": "^1.0.1",
     "lodash": "^3.9.3",
     "random-js": "^1.0.4",
