@@ -58,7 +58,7 @@
       client = Abb.create({
         'agent': agent
         , 'assert': assert
-        //, 'docMode': false
+        , 'docMode': true
       });
     });
 
