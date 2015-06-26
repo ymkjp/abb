@@ -74,7 +74,6 @@
           name: 'User'
           , desc: 'Operates CRUD for User resource'
         })
-        // @todo Assertion (RegExp, _.contains)
         .request({
           url: 'https://api.example.com/'
           , header: {'Accept': 'text/plain'}
@@ -99,7 +98,8 @@
         })
         .response({
           status: 200
-          , body: '__$create.response.body__'
+          , body: USER
+          //, body: '__$create.response.body__' // @todo Not yet supported in response
         })
         .exec(done);
       assert(executed);
