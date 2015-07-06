@@ -9,7 +9,6 @@
 
   var assert = require('power-assert')
     , nock = require('nock')
-    , sinon = require('sinon')
     , _ = require('lodash');
 
   var IS_COMMON_JS = !!(typeof module !== 'undefined' && module.exports)
@@ -41,14 +40,12 @@
         .patch('/users/111848702235277', UPDATE_TARGET).reply(200, USER_UPDATED)
         .delete('/users/111848702235277').reply(200, USER_UPDATED);
     } else {
-      var server = sinon.fakeServer.create();
-      server.autoRespond = true;
+      throw new Error('Abb only supports node environment');
     }
   }
 
   describe('Abb module', function() {
     var path = require('path')
-      , agent = require('superagent')
       , Abb = require('../lib/abb');
     var client;
 
@@ -56,9 +53,8 @@
 
     beforeEach(function(){
       client = Abb.create({
-        'agent': agent
-        , 'assert': assert
-        , 'docMode': true
+        docMode: true
+        , docPath: path.join(__dirname, 'docs')
       });
     });
 
@@ -95,6 +91,12 @@
         })
         .request('read', {
           url: 'https://api.example.com/users/__$create.response.body.id__'
+          //url: function(context) {
+          //  var id = context.response.body.id,
+          //   url = 'https://api.example.com/users/' + id;
+          //  console.log(url);
+          //  return url;
+          //}
         })
         .response({
           status: 200
@@ -106,29 +108,23 @@
     });
 
     it('provides fixable random values generator', function() {
-      var createVersionHash32bitInt = function (version) {
-          var hex32bitSafeDigit = 7
-            , hash = require('crypto').createHash('sha1').update(version, 'utf8').digest('hex');
-          return parseInt(hash.slice(0, hex32bitSafeDigit), 16);
-        }
-        , rNative1st = client.random({docMode: false})
-        , rNative2nd = client.random({docMode: false})
-        , rFixated1st = client.random({docMode: true})
-        , rFixated2nd = client.random({docMode: true})
-        , rSeed1st = client.random({docMode: true, randomSeed: createVersionHash32bitInt('v1.0')})
-        , rSeed2nd = client.random({docMode: true, randomSeed: createVersionHash32bitInt('v1.1 beta')});
+      var native1st = client.random({docMode: false})
+        , native2nd = client.random({docMode: false})
+        , fixated1st = client.random({docMode: true})
+        , fixated2nd = client.random({docMode: true})
+        , seed1st = client.random({docMode: true, randomSeed: 0x12345987})
+        , seed2nd = client.random({docMode: true, randomSeed: 0x12345987})
+        , seed3rd = client.random({docMode: true, randomSeed: 0x90abcdef})
+        , verPin1st = client.random({docMode: true, docVersion: 'v0.8'})
+        , verPin2nd = client.random({docMode: true, docVersion: 'v0.8'})
+        , verPin3rd = client.random({docMode: true, docVersion: 'v1.0 beta'});
 
-      assert.notEqual(
-        rNative1st.uuid4(),
-        rNative2nd.uuid4());
-
-      assert.equal(
-        rFixated1st.uuid4(),
-        rFixated2nd.uuid4());
-
-      assert.notEqual(
-        rSeed1st.uuid4(),
-        rSeed2nd.uuid4());
+      assert.equal(fixated1st.uuid4(), fixated2nd.uuid4());
+      assert.equal(seed1st.uuid4(), seed2nd.uuid4());
+      assert.equal(verPin1st.uuid4(), verPin2nd.uuid4());
+      assert.notEqual(native1st.uuid4(), native2nd.uuid4());
+      assert.notEqual(seed1st.uuid4(), seed3rd.uuid4());
+      assert.notEqual(verPin1st.uuid4(), verPin3rd.uuid4());
     });
 
   });

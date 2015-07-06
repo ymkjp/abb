@@ -8,7 +8,8 @@
     "test": "mocha --require intelli-espower-loader test/",
     "test:watch": "npm run test -- --watch",
     "test:xunit": "npm run test -- --reporter xunit",
-    "lint": "eslint lib/**.js test/**.js",
+    "example": "node example/**.js",
+    "lint": "eslint lib/**.js test/**.js example/**.js",
     "doc": "docco examples/*.js"
   },
   "repository": {
@@ -35,6 +36,7 @@
     "intelli-espower-loader": "^0.7.0",
     "mocha": "^2.2.5",
     "nock": "^2.4.1",
+    "oauth": "^0.9.13",
     "power-assert": "^0.11.0",
     "sinon": "^1.14.1"
   },

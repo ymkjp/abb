@@ -20,7 +20,12 @@ npm install abb
 ```
 
 ## Tips
-* mt.seed(value)
+* It is good practice to avoid messy document diffs by fixating random values
+```js
+var Abb = require('abb').create({docMode: true});
+var random = Abb.random();
+random.integer(1, 100);
+```
 
 ## Contribution
 
