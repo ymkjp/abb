@@ -41,6 +41,12 @@
     "sinon": "^1.14.1"
   },
   "directories": {
-    "test": "test/"
-  }
+    "example": "example",
+    "test": "test"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "test"
+  ]
 }
